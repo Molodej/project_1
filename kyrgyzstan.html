@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Кыргызстан — страна небесных гор</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#b9e8fe;--sky:#b9e8fe;--surface:#fff;--text:#111;--muted:#4a6577;--accent:#111;--accent2:#111;--line:#e3eef5;--hero1:#111;--hero2:#111;--hero3:#111;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+
+
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif;line-height:1.6}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;line-height:1.15}
+a{color:inherit;text-decoration:none}
+nav{position:fixed;top:0;left:0;right:0;z-index:10;display:flex;justify-content:space-between;align-items:center;padding:14px 5vw;padding-top:calc(14px + env(safe-area-inset-top,0px));background:rgba(13,42,61,.55);backdrop-filter:blur(12px);color:#fff}
+nav b{font-family:Fraunces,serif;font-size:1.2rem;letter-spacing:.5px}
+nav div{display:flex;gap:22px;font-size:.92rem}
+nav a:hover{color:var(--hero3)}
+@media(max-width:700px){nav div a:nth-child(n+3){display:none}}
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;padding:120px 5vw 160px;color:#fff;background:linear-gradient(180deg,var(--hero1) 0%,var(--hero2) 55%,var(--hero3) 100%);overflow:hidden}
+.hero svg.flat{position:absolute;left:0;bottom:-1px;width:100%;height:58%}
+.hero .in{position:relative;z-index:2;max-width:760px}
+.tag{display:inline-block;padding:6px 14px;border:1px solid rgba(255,255,255,.5);border-radius:99px;font-size:.8rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:22px}
+.hero h1{font-size:clamp(2.6rem,7vw,5.2rem);margin-bottom:20px}
+.hero p{font-size:1.15rem;max-width:560px;opacity:.92;margin-bottom:32px}
+.btn{display:inline-block;padding:14px 28px;border-radius:99px;background:var(--accent);color:#fff;font-weight:600;border:0;cursor:pointer;font-size:1rem;font-family:inherit;transition:transform .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn.ghost{background:transparent;border:1px solid #fff;margin-left:10px}
+section{padding:90px 5vw;max-width:1200px;margin:0 auto}
+.eyebrow{color:var(--accent);font-weight:600;letter-spacing:2px;font-size:.8rem;text-transform:uppercase;margin-bottom:10px}
+h2{font-size:clamp(1.9rem,4vw,3rem);margin-bottom:14px}
+.lead{color:var(--muted);max-width:620px;margin-bottom:44px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:20px;text-align:center;background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:34px;margin-top:-70px;position:relative;z-index:3;max-width:1100px}
+.stats b{display:block;font-family:Fraunces,serif;font-size:2.4rem;color:var(--accent2)}
+.stats span{color:var(--muted);font-size:.9rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:24px}
+.card{border-radius:22px;overflow:hidden;background:var(--surface);border:1px solid var(--line);transition:transform .3s,box-shadow .3s}
+.card:hover{transform:translateY(-6px);box-shadow:0 20px 40px rgba(0,0,0,.15)}
+.pic{height:190px;display:flex;align-items:flex-end;padding:16px;color:#fff;font-size:.8rem;letter-spacing:1px;text-transform:uppercase}
+.card .b{padding:22px}
+.pic{position:relative;overflow:hidden}
+.pic svg{position:absolute;inset:0;width:100%;height:100%}
+.pic span{position:relative;z-index:1;text-shadow:0 1px 8px rgba(0,0,0,.45)}
+.card h3{font-size:1.4rem;margin-bottom:8px}
+.card p{color:var(--muted);font-size:.95rem}
+.meta{margin-top:14px;font-size:.82rem;color:var(--accent2);font-weight:600}
+.exp{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px}
+.exp div{padding:26px;border-radius:18px;background:var(--surface);border:1px solid var(--line)}
+.exp i{font-style:normal;font-size:2rem;display:block;margin-bottom:10px}
+.exp h3{font-size:1.15rem;margin-bottom:6px}
+.exp p{color:var(--muted);font-size:.92rem}
+.tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:24px}
+.tabs button{padding:10px 20px;border-radius:99px;border:1px solid var(--line);background:var(--surface);color:var(--text);cursor:pointer;font-family:inherit;font-size:.95rem}
+.tabs button.on{background:var(--accent2);color:#fff;border-color:var(--accent2)}
+.plan{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:10px 28px}
+.day{display:flex;gap:20px;padding:18px 0;border-bottom:1px solid var(--line)}
+.day:last-child{border:0}
+.day b{min-width:70px;color:var(--accent);font-family:Fraunces,serif}
+.cta{background:linear-gradient(135deg,var(--hero1),var(--accent2));color:#fff;border-radius:28px;padding:56px 5vw;max-width:1100px;margin:0 auto 90px}
+.cta h2{margin-bottom:8px}
+.cta p{opacity:.9;margin-bottom:26px}
+form{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+input,select{padding:14px 16px;border-radius:12px;border:0;font-family:inherit;font-size:1rem;background:#fff;color:#1c2430}
+form .btn{background:var(--accent)}
+#ok{display:none;margin-top:18px;font-weight:600}
+footer{text-align:center;padding:40px 5vw;color:var(--muted);font-size:.88rem;border-top:1px solid var(--line)}
+.theme{background:none;border:1px solid rgba(255,255,255,.5);color:#fff;border-radius:99px;padding:6px 12px;cursor:pointer}
+.bar{position:fixed;top:0;left:0;height:3px;width:0;background:var(--accent);z-index:20}
+.rv{opacity:0;transform:translateY(34px);transition:opacity .9s ease,transform .9s ease}
+.rv.in{opacity:1;transform:none}
+.hero .in{animation:rise 1.2s ease both}
+@keyframes rise{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:none}}
+.calc{display:grid;grid-template-columns:1.3fr 1fr;gap:24px}
+@media(max-width:800px){.calc{grid-template-columns:1fr}}
+.calc>div{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:30px}
+.calc label{display:flex;justify-content:space-between;font-weight:600;margin:18px 0 8px}
+.calc label:first-child{margin-top:0}
+.calc input[type=range]{width:100%;padding:0;accent-color:var(--accent)}
+.seg{display:flex;gap:8px;flex-wrap:wrap}
+.seg button{flex:1;padding:12px;border-radius:12px;border:1px solid var(--line);background:var(--bg);color:var(--text);cursor:pointer;font-family:inherit;font-size:.92rem}
+.seg button.on{background:var(--accent);color:#fff;border-color:var(--accent)}
+.res{background:linear-gradient(135deg,var(--hero1),var(--accent2))!important;color:#fff;display:flex;flex-direction:column;justify-content:center;border:0!important}
+.res b{font-family:Fraunces,serif;font-size:3.4rem;line-height:1.1;margin:8px 0}
+.res small{opacity:.85}
+.seas{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.seas div{padding:28px;border-radius:20px;color:#fff;min-height:200px;display:flex;flex-direction:column;justify-content:flex-end}
+.seas h3{margin-bottom:6px}.seas p{font-size:.92rem;opacity:.95}
+details{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:20px 24px;margin-bottom:12px}
+summary{cursor:pointer;font-weight:600;font-size:1.05rem}
+details p{color:var(--muted);margin-top:12px}
+.hero{background:var(--sky);color:#111}
+.hero svg:not(.flat){display:none}
+.hero::before{content:'';position:absolute;top:16%;right:9%;width:96px;height:96px;border-radius:50%;background:#fff;opacity:.7}
+.hero::after{content:'';position:absolute;top:30%;left:6%;width:26px;height:26px;border-radius:50%;border:2px solid #111}
+.hero .in{background:#fff;border-radius:36px;padding:48px 44px}
+.tag{border-color:#111}
+h1,h2,h3,nav b,.stats b,.day b,.res b{font-family:Inter,system-ui,sans-serif;font-weight:700}
+nav{background:rgba(255,255,255,.88);color:#111}
+nav a:hover{color:#4aa8d8}
+.theme{display:none}
+.bar{background:#111}
+.btn{background:var(--sky);color:#111;border:1.5px solid #111}
+.btn.ghost{background:#fff;border:1.5px solid #111;color:#111}
+.eyebrow{color:#111;background:#fff;display:inline-block;padding:5px 14px;border-radius:99px;font-size:.75rem}
+.card,.stats,.plan,details{border:0;border-radius:32px}
+.exp div,.seas div{border:0;border-radius:28px}
+.pic{margin:12px 12px 0;border-radius:24px}
+.tabs button,.seg button{border:1.5px solid #111;background:#fff;color:#111}
+.tabs button.on,.seg button.on{background:var(--sky);color:#111;border-color:#111}
+.calc>div{border:0;border-radius:32px}
+.res{background:#fff!important;color:#111}
+.cta{position:relative;overflow:hidden;background:#fff;color:#111;border-radius:36px;text-align:center;padding:120px 8vw 56px;max-width:560px}
+.cta p{color:var(--muted);opacity:1}
+.cta form{display:flex;flex-direction:column;gap:6px;text-align:left}
+.cta input,.cta select{background:transparent;border:0;border-bottom:1.5px solid #ccc;border-radius:0;padding:16px 2px;font-size:.95rem;color:#111}
+.cta input::placeholder{color:#aaa}
+.cta form .btn{margin-top:22px;background:#ddd;border:1.5px solid #111;color:#111;width:100%}
+.leaf{position:absolute;top:0;left:50%;transform:translateX(-50%);width:230px}
+footer{color:var(--muted);border-top:0}
+</style>
+</head>
+<body>
+<div class="bar" id="bar"></div>
+<nav><b>KYRGYZSTAN</b><div><a href="#places">Места</a><a href="#do">Впечатления</a><a href="#route">Маршруты</a><a href="#calc">Цена</a><a href="#book">Заявка</a><button class="theme" id="th" aria-label="Тема">◐</button></div></nav>
+
+<header class="hero"><svg class='flat' viewBox='0 0 1440 520' preserveAspectRatio='xMidYMax slice' aria-hidden='true'><path d='M520 520 C500 330 680 230 860 275 C1040 320 1180 250 1250 400 C1290 500 1220 520 1220 520Z' fill='#e0e0e0'/><path d='M0 520 V400 L180 250 L300 350 L430 230 L640 520Z' fill='#fff'/><path d='M820 520 L1020 300 L1140 400 L1300 270 L1440 380 V520Z' fill='#fff'/><path d='M430 230 L470 275 L450 270 L430 295 L412 268 L392 275Z M1300 270 L1335 308 L1318 303 L1300 326 L1284 302 L1266 308Z' fill='#b9e8fe'/><path d='M0 520 V455 Q300 405 600 465 T1200 455 Q1350 445 1440 475 V520Z' fill='#8fd3f7'/><circle cx='330' cy='150' r='46' fill='#fff' opacity='.8'/><circle cx='1180' cy='190' r='9' fill='none' stroke='#111' stroke-width='2'/><path d='M1040 190 h24 l-12 -22z' fill='#b9e8fe' stroke='#111' stroke-width='2'/></svg>
+<svg viewBox="0 0 1440 520" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+<defs><radialGradient id='sun' cx='.72' cy='.42' r='.5'><stop offset='0' stop-color='#fff3d0' stop-opacity='.95'/><stop offset='.35' stop-color='#ffc98a' stop-opacity='.5'/><stop offset='1' stop-color='#ffc98a' stop-opacity='0'/></radialGradient><linearGradient id='lk' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='#6aaec2'/><stop offset='1' stop-color='#12404f'/></linearGradient><linearGradient id='fog' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='#fff' stop-opacity='0'/><stop offset='1' stop-color='#fde7cf' stop-opacity='.55'/></linearGradient><filter id='bl'><feGaussianBlur stdDeviation='14'/></filter></defs>
+<rect width='1440' height='520' fill='url(#sun)'/>
+<g filter='url(#bl)' fill='#fff' opacity='.4'><ellipse cx='300' cy='120' rx='220' ry='22'/><ellipse cx='900' cy='70' rx='260' ry='20'/><ellipse cx='1220' cy='170' rx='180' ry='16'/></g>
+<path d='M0 330 L90 270 L150 300 L260 190 L300 215 L360 160 L440 260 L520 220 L620 300 L700 200 L760 240 L860 130 L920 200 L980 170 L1080 290 L1180 210 L1260 250 L1340 190 L1440 280 V400 H0Z' fill='#a9c3d6'/>
+<path d='M235 210 L260 190 L285 212 L272 206 L260 222 L248 206Z M335 182 L360 160 L385 184 L372 177 L360 194 L348 177Z M676 220 L700 200 L724 222 L712 216 L700 232 L688 216Z M830 160 L860 130 L890 162 L874 154 L860 176 L846 154Z M955 188 L980 170 L1006 192 L992 187 L980 202 L968 187Z' fill='#fff' opacity='.95'/>
+<rect y='300' width='1440' height='100' fill='url(#fog)'/>
+<path d='M0 370 L120 310 L220 350 L380 270 L500 340 L640 290 L780 350 L940 280 L1100 350 L1240 300 L1440 360 V400 H0Z' fill='#5b8aa2'/>
+<path d='M0 400 L160 345 L320 385 L520 340 L700 390 L900 345 L1100 388 L1300 350 L1440 380 V420 H0Z' fill='#2a5f70'/>
+<rect y='395' width='1440' height='125' fill='url(#lk)'/>
+<path d='M0 400 L120 450 L220 420 L380 480 L500 430 L640 470 L780 425 L940 485 L1100 430 L1240 470 L1440 420 V520 H0Z' fill='#0d2a3d' opacity='.28'/>
+<path d='M200 430h120M520 452h200M900 425h160M1150 462h180M60 474h140M700 410h90' stroke='#fff' stroke-opacity='.3' stroke-width='2' stroke-linecap='round'/>
+<path d='M600 90q8-8 16 0q8-8 16 0M650 70q7-7 14 0q7-7 14 0M700 100q6-6 12 0q6-6 12 0' stroke='#fff' stroke-opacity='.7' fill='none' stroke-width='2'/>
+<path d='M0 520 V478 Q200 455 420 480 T900 492 Q1200 470 1440 497 V520Z' fill='#0d2a3d'/>
+<g fill='#0a2030'><path d='M1130 484 V462 Q1170 428 1210 462 V484Z'/><rect x='1114' y='458' width='112' height='5' rx='2'/><path d='M1160 484 V468 Q1170 460 1180 468 V484Z' fill='#f2b27a'/><path d='M60 490 l16 -58 l16 58Z M92 490 l14 -48 l14 48Z M30 492 l12 -40 l12 40Z'/></g>
+</svg>
+<div class="in">
+<span class="tag">Тянь-Шань · Великий шёлковый путь</span>
+<h1>Страна небесных гор ждёт вас</h1>
+<p>Бирюзовые озёра, кочевые юрты, ледники и 90% территории выше 1500 метров. Кыргызстан — одно из последних мест, где путешествие всё ещё приключение.</p>
+<a class="btn" href="#book">Спланировать поездку</a><a class="btn ghost" href="#places">Куда поехать</a>
+</div>
+</header>
+
+<div style="padding:0 5vw"><div class="stats">
+<div><b>94%</b><span>территории — горы</span></div>
+<div><b>1 900+</b><span>озёр</span></div>
+<div><b>60 дней</b><span>безвиз для многих стран</span></div>
+<div><b>7 439 м</b><span>пик Победы</span></div>
+</div></div>
+
+<section id="places">
+<div class="eyebrow">Направления</div>
+<h2>Шесть мест, ради которых стоит лететь</h2>
+<p class="lead">От пляжей на высокогорном озере до заброшенных караван-сараев — выберите своё настроение.</p>
+<div class="grid">
+<div class="card"><div class="pic" style="background:linear-gradient(180deg,#6fb4d6,#dcefF6)"><svg viewBox='0 0 320 190' preserveAspectRatio='xMidYMid slice'><circle cx='250' cy='45' r='16' fill='#fff6d6' opacity='.9'/><path d='M0 115 L70 65 L110 95 L180 40 L240 100 L290 78 L320 100 V190H0Z' fill='#eaf6fb' opacity='.7'/><path d='M0 125 L90 90 L170 118 L250 88 L320 118 V190H0Z' fill='#1a5f84'/><rect y='132' width='320' height='58' fill='#0a4a6e' opacity='.85'/><path d='M40 150h50M140 165h70M230 148h40' stroke='#fff' stroke-opacity='.35' stroke-width='2'/></svg><span>Иссык-Куль</span></div><div class="b"><h3>Озеро Иссык-Куль</h3><p>Второе по величине высокогорное озеро мира: тёплая солёная вода, пляжи и снежные хребты на горизонте.</p><div class="meta">Июнь – сентябрь · 4 часа от Бишкека</div></div></div>
+<div class="card"><div class="pic" style="background:linear-gradient(180deg,#8fc7e8,#f5f0d8)"><svg viewBox='0 0 320 190' preserveAspectRatio='xMidYMid slice'><path d='M0 95 L80 70 L160 92 L240 66 L320 90 V190H0Z' fill='#9db8c9'/><rect y='108' width='320' height='24' fill='#3f87a8'/><path d='M0 125 Q80 105 160 124 T320 118 V190H0Z' fill='#5d9a46'/><path d='M0 150 Q100 130 200 150 T320 145 V190H0Z' fill='#3f7a35'/><g fill='#fff'><path d='M200 150 v-12 q16-18 32 0 v12z'/><path d='M244 156 v-9 q12-14 24 0 v9z'/></g><path d='M205 150 v-6 h6 v6z' fill='#c0482f'/><g fill='#3a2a20'><ellipse cx='60' cy='160' rx='9' ry='4'/><ellipse cx='84' cy='165' rx='9' ry='4'/></g></svg><span>Сон-Куль</span></div><div class="b"><h3>Озеро Сон-Куль</h3><p>Альпийские луга на высоте 3 016 м, табуны лошадей и ночёвки в юртах под россыпью звёзд.</p><div class="meta">Июнь – сентябрь · юрточные лагеря</div></div></div>
+<div class="card"><div class="pic" style="background:linear-gradient(180deg,#6f8aa3,#c9d6e0)"><svg viewBox='0 0 320 190' preserveAspectRatio='xMidYMid slice'><path d='M0 120 L60 60 L110 100 L170 20 L240 105 L290 55 L320 90 V190H0Z' fill='#4b6073'/><path d='M150 38 L170 20 L192 44 L180 40 L170 54 L160 40Z M44 76 L60 60 L76 80 L66 76 L60 88 L52 76Z M270 70 L290 55 L306 74 L296 70 L290 82Z' fill='#fff'/><path d='M0 140 Q80 120 160 140 T320 135 V190H0Z' fill='#2f4a3c'/><g fill='#1d3329'><path d='M20 190 l14 -54 l14 54Z M52 190 l11 -42 l11 42Z M250 190 l14 -56 l14 56Z M284 190 l12 -44 l12 44Z'/></g><path d='M150 190 Q165 150 160 130' stroke='#dfeaf0' stroke-width='5' fill='none' stroke-linecap='round'/></svg><span>Ала-Арча</span></div><div class="b"><h3>Ущелье Ала-Арча</h3><p>Национальный парк в часе от столицы: ледники, водопады и тропы на любой уровень подготовки.</p><div class="meta">Круглый год · 40 км от Бишкека</div></div></div>
+<div class="card"><div class="pic" style="background:linear-gradient(180deg,#f4b073,#fbe2b8)"><svg viewBox='0 0 320 190' preserveAspectRatio='xMidYMid slice'><circle cx='60' cy='50' r='20' fill='#fff2c9' opacity='.9'/><path d='M0 100 L50 70 L70 95 L120 55 L150 90 L200 60 L240 95 L290 72 L320 100 V190H0Z' fill='#c9663a'/><path d='M0 125 L40 95 L65 120 L110 85 L140 118 L190 90 L230 122 L275 98 L320 125 V190H0Z' fill='#a8451f'/><path d='M0 155 L60 130 L100 150 L160 125 L220 152 L280 132 L320 150 V190H0Z' fill='#7d3015'/><path d='M120 85 V125 M200 90 V122 M110 85 V120' stroke='#e08a55' stroke-width='3' opacity='.6'/></svg><span>Сказка</span></div><div class="b"><h3>Каньон Сказка</h3><p>Красные скалы, будто с другой планеты. Лучше всего — на закате, когда глина горит оранжевым.</p><div class="meta">Круглый год · южный берег Иссык-Куля</div></div></div>
+<div class="card"><div class="pic" style="background:linear-gradient(180deg,#8fb3cc,#efe3c8)"><svg viewBox='0 0 320 190' preserveAspectRatio='xMidYMid slice'><path d='M0 100 L70 65 L130 95 L200 55 L270 90 L320 70 V190H0Z' fill='#8a8f86'/><path d='M0 135 Q100 112 200 134 T320 128 V190H0Z' fill='#9c8f6a'/><g fill='#6b5a45'><rect x='100' y='110' width='120' height='50'/><path d='M120 110 a18 18 0 0 1 36 0Z M164 110 a18 18 0 0 1 36 0Z'/></g><g fill='#2d2218'><path d='M140 160 v-22 a10 10 0 0 1 20 0 v22z'/><rect x='108' y='124' width='8' height='12'/><rect x='204' y='124' width='8' height='12'/></g><path d='M0 160 Q120 148 320 165 V190H0Z' fill='#7d7050'/></svg><span>Таш-Рабат</span></div><div class="b"><h3>Караван-сарай Таш-Рабат</h3><p>Каменный постоялый двор XV века на древнем Шёлковом пути, затерянный в долине на высоте 3 200 м.</p><div class="meta">Май – октябрь · провинция Нарын</div></div></div>
+<div class="card"><div class="pic" style="background:linear-gradient(180deg,#5b78a8,#d7c1e0)"><svg viewBox='0 0 320 190' preserveAspectRatio='xMidYMid slice'><path d='M0 125 L50 75 L100 105 L170 28 L240 100 L285 62 L320 95 V190H0Z' fill='#e9eef7'/><path d='M170 28 L200 66 L180 60 L170 90 L150 60 L136 70Z' fill='#9fb0d0' opacity='.7'/><path d='M0 150 L90 115 L170 142 L260 112 L320 140 V190H0Z' fill='#f6f8fc'/><path d='M60 190 Q120 150 230 118' stroke='#7a8fb8' stroke-width='3' fill='none' stroke-dasharray='6 5'/><g fill='#3a2c4a'><path d='M30 190 v-24 l22 -14 l22 14 v24z'/><path d='M255 190 l10 -34 l10 34Z M276 190 l8 -26 l8 26Z'/></g><path d='M40 190 v-12 h8 v12z' fill='#f2b27a'/></svg><span>Каракол</span></div><div class="b"><h3>Каракол и Алтын-Арашан</h3><p>Горнолыжный город, горячие источники и старт знаменитого трека к пику Каракол и озеру Ак-Суу.</p><div class="meta">Круглый год · лыжи с декабря</div></div></div>
+</div>
+</section>
+
+<section id="do">
+<div class="eyebrow">Впечатления</div>
+<h2>Что делать в Кыргызстане</h2>
+<p class="lead">Страна для тех, кто хочет не смотреть на жизнь, а прожить её.</p>
+<div class="exp">
+<div><i>🏕️</i><h3>Ночь в юрте</h3><p>Ужин у семьи кочевников, бешбармак и кумыс у костра.</p></div>
+<div><i>🐎</i><h3>Конные туры</h3><p>Многодневные маршруты по джайлоо с проводником.</p></div>
+<div><i>🥾</i><h3>Треккинг</h3><p>От лёгких прогулок до перевалов выше 4 000 м.</p></div>
+<div><i>🦅</i><h3>Беркутчи</h3><p>Охота с беркутом — живая традиция, а не шоу.</p></div>
+<div><i>🏹</i><h3>Кочевые игры</h3><p>Кок-бору, лучники и борьба на фестивалях.</p></div>
+<div><i>♨️</i><h3>Термы</h3><p>Горячие источники с видом на хребты.</p></div>
+</div>
+</section>
+
+<section id="route">
+<div class="eyebrow">Маршруты</div>
+<h2>Готовые программы</h2>
+<div class="tabs" id="tabs"></div>
+<div class="plan" id="plan"></div>
+</section>
+
+<section id="season">
+<div class="eyebrow">Когда ехать</div>
+<h2>Четыре сезона — четыре разные страны</h2>
+<p class="lead">Кыргызстан красив круглый год, главное — выбрать правильное время для своей цели.</p>
+<div class="seas">
+<div style="background:linear-gradient(160deg,#4b8f4a,#a5d17a)"><h3>Весна · апр–май</h3><p>Цветущие тюльпаны в предгорьях, мало туристов, свежие реки.</p></div>
+<div style="background:linear-gradient(160deg,#0b6a9a,#4fc3d9)"><h3>Лето · июн–авг</h3><p>Пик сезона: юрты, пляжи Иссык-Куля, высокогорные треки.</p></div>
+<div style="background:linear-gradient(160deg,#a8501c,#e9a04b)"><h3>Осень · сен–окт</h3><p>Золотые леса, ясное небо и лучшие фото. Идеально для конных туров.</p></div>
+<div style="background:linear-gradient(160deg,#27405a,#8fb0cc)"><h3>Зима · дек–мар</h3><p>Лыжи в Караколе, фрирайд, термы и тишина заснеженных долин.</p></div>
+</div>
+</section>
+
+<section id="calc">
+<div class="eyebrow">Стоимость</div>
+<h2>Рассчитайте бюджет поездки</h2>
+<p class="lead">Ориентировочная цена без авиабилетов: проживание, питание, трансферы, гид и входные билеты. Для групп от 4 человек скидка 10%.</p>
+<div class="calc">
+<div>
+<label>Дней в поездке <span id="dv">7</span></label><input type="range" id="dd" min="3" max="14" value="7">
+<label>Путешественников <span id="nv">2</span></label><input type="range" id="nn" min="1" max="10" value="2">
+<label>Стиль</label>
+<div class="seg" id="seg"><button data-r="55">Эконом</button><button data-r="110" class="on">Комфорт</button><button data-r="220">Премиум</button></div>
+</div>
+<div class="res"><span>Итого за поездку</span><b id="tot">$1 540</b><small id="per"></small></div>
+</div>
+</section>
+
+<section id="faq">
+<div class="eyebrow">Вопросы</div>
+<h2>Что нужно знать перед поездкой</h2>
+<details><summary>Нужна ли виза?</summary><p>Многие страны пользуются безвизовым режимом на срок до 60 дней. Правила меняются, поэтому проверьте актуальные условия на сайте МИД Кыргызстана перед вылетом.</p></details>
+<details><summary>Безопасно ли путешествовать?</summary><p>Страна гостеприимна, но в горах важно ходить с проводником, следить за погодой и иметь страховку, покрывающую высокогорье.</p></details>
+<details><summary>Какая валюта и как платить?</summary><p>Национальная валюта — сом. В городах принимают карты, а в деревнях и юртах лучше иметь наличные.</p></details>
+<details><summary>Как добраться?</summary><p>Основной аэропорт — «Манас» в Бишкеке, есть рейсы из Стамбула, Дубая, Москвы и других городов. Из Бишкека до озера Иссык-Куль около 4 часов на машине.</p></details>
+</section>
+
+<div class="cta" id="book"><svg class='leaf' viewBox='0 0 220 110' aria-hidden='true'><circle cx='20' cy='20' r='9' fill='none' stroke='#111' stroke-width='1.5'/><g fill='#b9e8fe'><ellipse cx='60' cy='85' rx='26' ry='9' transform='rotate(-20 60 85)'/><ellipse cx='150' cy='75' rx='24' ry='9' transform='rotate(25 150 75)'/></g><path d='M30 72 Q120 20 190 0' stroke='#111' stroke-width='2' fill='none'/><g fill='#111'><ellipse cx='70' cy='52' rx='20' ry='7' transform='rotate(-30 70 52)'/><ellipse cx='100' cy='38' rx='20' ry='7' transform='rotate(-35 100 38)'/><ellipse cx='130' cy='24' rx='20' ry='7' transform='rotate(-40 130 24)'/><ellipse cx='95' cy='58' rx='18' ry='6' transform='rotate(35 95 58)'/><ellipse cx='128' cy='46' rx='18' ry='6' transform='rotate(35 128 46)'/><ellipse cx='160' cy='30' rx='16' ry='6' transform='rotate(35 160 30)'/></g><circle cx='200' cy='85' r='13' fill='#b9e8fe' stroke='#111' stroke-width='1.5'/></svg>
+<h2>Расскажите, о каком путешествии мечтаете</h2>
+<p>Мы подберём маршрут и вернёмся с предложением в течение 24 часов.</p>
+<form id="f">
+<input required placeholder="Ваше имя">
+<input required type="email" placeholder="Email">
+<select><option>3–4 дня</option><option>5–7 дней</option><option>8–14 дней</option><option>Больше 2 недель</option></select>
+<button class="btn" type="submit">Отправить заявку</button>
+</form>
+<div id="ok">Спасибо! Заявка принята — мы скоро свяжемся с вами.</div>
+</div>
+
+<footer>© 2026 Visit Kyrgyzstan · Демонстрационный сайт · Бишкек, Кыргызстан</footer>
+
+<script>
+var R={"Бишкек + Ала-Арча · 3 дня":[["День 1","Прилёт, прогулка по Бишкеку, площадь Ала-Тоо, Ошский базар"],["День 2","Ущелье Ала-Арча: водопад Ак-Сай, пикник у реки"],["День 3","Плов с гидом, сувениры, трансфер в аэропорт"]],
+"Иссык-Куль · 5 дней":[["День 1","Бишкек → Бурана → озеро Иссык-Куль"],["День 2","Каньон Сказка, закат, ужин на берегу"],["День 3","Каракол, дунганская мечеть, Алтын-Арашан"],["День 4","Термы, лодка по озеру или треккинг к Ак-Суу"],["День 5","Возвращение через Боомское ущелье"]],
+"Большое путешествие · 10 дней":[["День 1–2","Бишкек и Ала-Арча"],["День 3–4","Иссык-Куль и Каракол"],["День 5–6","Перевал и Сон-Куль, ночёвка в юрте"],["День 7–8","Таш-Рабат, провинция Нарын"],["День 9–10","Конный тур, финальный ужин и вылет"]]};
+var t=document.getElementById("tabs"),p=document.getElementById("plan");
+function show(k){p.innerHTML=R[k].map(function(d){return '<div class="day"><b>'+d[0]+'</b><span>'+d[1]+'</span></div>'}).join("");
+[].forEach.call(t.children,function(b){b.className=b.textContent==k?"on":""})}
+Object.keys(R).forEach(function(k){var b=document.createElement("button");b.textContent=k;b.onclick=function(){show(k)};t.appendChild(b)});
+show(Object.keys(R)[0]);
+document.getElementById("f").onsubmit=function(e){e.preventDefault();this.style.display="none";document.getElementById("ok").style.display="block"};
+document.getElementById("th").onclick=function(){var r=document.documentElement,d=r.getAttribute("data-theme");r.setAttribute("data-theme",d=="dark"?"light":"dark")};
+var B=document.getElementById('bar');addEventListener('scroll',function(){var h=document.documentElement;B.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%'},{passive:true});
+var io=window.IntersectionObserver?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);if(e.target.tagName=='B')cnt(e.target)}})},{threshold:.12}):null;
+[].forEach.call(document.querySelectorAll('section,.exp div,.stats'),function(el){if(io){el.classList.add('rv');io.observe(el)}});
+function cnt(el){var m=el.textContent.match(/^[\d\s\u00a0]+/);if(!m)return;var raw=m[0],rest=el.textContent.slice(raw.length),end=+raw.replace(/\s/g,''),t0=null;function st(t){t0=t0||t;var k=Math.min((t-t0)/1400,1),v=Math.round(end*(1-Math.pow(1-k,3)));el.textContent=v.toLocaleString('ru-RU')+rest;if(k<1)requestAnimationFrame(st)}requestAnimationFrame(st)}
+[].forEach.call(document.querySelectorAll('.stats b'),function(b){if(io)io.observe(b)});
+var rate=110,dd=document.getElementById('dd'),nn=document.getElementById('nn');
+function calc(){var d=+dd.value,n=+nn.value,tot=rate*d*n*(n>=4?.9:1);document.getElementById('dv').textContent=d;document.getElementById('nv').textContent=n;document.getElementById('tot').textContent='$'+Math.round(tot).toLocaleString('ru-RU');document.getElementById('per').textContent='≈ $'+Math.round(tot/n).toLocaleString('ru-RU')+' на человека'}
+dd.oninput=nn.oninput=calc;
+[].forEach.call(document.querySelectorAll('#seg button'),function(b){b.onclick=function(){rate=+b.dataset.r;[].forEach.call(b.parentNode.children,function(x){x.className=''});b.className='on';calc()}});
+calc();
+</script>
+</body>
+</html>
