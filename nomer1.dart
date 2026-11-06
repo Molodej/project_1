@@ -1,7 +1,13 @@
-void main() {
-  List<String> a = ['Бишкек', 'Ош', 'Джалал-Абад', 'Каракол', 'Талас'];
+import 'dart:io';
 
-  print('Количество городов: ${a.length}');
-  print('Первый город: ${a.first}');
-  print('Последний город: ${a.last}');
+void main() {
+  print('Сколько вам лет?');
+
+  int age = int.parse(stdin.readLineSync()!);
+
+  if (age >= 18) {
+    print('Проходите');
+  } else {
+    print('Вход запрещен');
+  }
 }
